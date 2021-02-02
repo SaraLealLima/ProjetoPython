@@ -44,7 +44,7 @@ def home():
 
 @app.errorhandler(404)
 def not_found(erro):
-    return render_template("error.html")
+    return "Insira valores válidos"
 
 app.run(debug=True) 
 # mudar a porta: passar o parametro port=0000
