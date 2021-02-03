@@ -6,9 +6,14 @@ app = Flask(__name__, template_folder="")
 
 @app.route("/", methods = ["GET", "POST"])
 def home():
+    
     if (request.method == "GET"):
         return render_template("index.html")
     else:
+        num1 = request.form["num1"]
+        num2 = request.form["num2"]
+        calculo = request.form["calculo"]
+        
         if (request.form["num1"] == ""):
             return "Preencha o primeiro campo"
 
@@ -19,9 +24,7 @@ def home():
             return "Escolha uma operação"
 
              
-        num1 = request.form["num1"]
-        num2 = request.form["num2"]
-
+        
         if (request.form["calculo"] == "soma"):
             soma = int(num1) + int(num2)
             return {
