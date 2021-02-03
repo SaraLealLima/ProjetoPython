@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <style>
-        body {
-            background-image: linear-gradient(to top, #0095ff, #1b9bfb, #2fa0f7, #3fa5f3, #4faaee, #5db0ed, #6bb5ec, #78bbeb, #87c3ee, #96cbf2, #a4d3f5, #b2dbf9);
-        }
-        .calculadorinha {
-            background-color:rgba(255, 255, 255, 0.788)
-        }
- </style>
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Index</title>
 </head>
 <body>
@@ -32,6 +25,8 @@
                 <label for="divisao">Divisão</label>
                 <input type="radio" name="calculo" id="juros" value="juros">
                 <label for="juros">Juros</label>
+                <input type="radio" name="calculo" id="resto" value="resto">
+                <label for="resto">Resto da divisão</label>
                 <div class="mt-4">
                     <button class="btn btn-primary">Enviar</button>
                     <button class="btn btn-secondary" type="reset">Apagar</button>

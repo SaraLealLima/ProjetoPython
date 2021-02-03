@@ -34,10 +34,15 @@ def home():
                 return {
                     "Resultado": str(juros3) 
                 }   
-            else:
+            elif (request.form["calculo"] == "divisao"):
                 divisao = int(num1) // int(num2)
                 return {
                     "Resultado": str(divisao) 
+                }
+            else:
+                resto = int(num1) % int(num2)
+                return {
+                    "Resultado": str(resto) 
                 }
         else:
             return "Informe valores válidos"
@@ -45,6 +50,10 @@ def home():
 @app.route('/js/<path:path>')
 def send_js(path):
     return send_from_directory('js', path)
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    return send_from_directory('css', path)
 
 @app.errorhandler(404)
 def not_found(erro):
