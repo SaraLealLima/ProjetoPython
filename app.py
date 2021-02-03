@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
 app = Flask(__name__, template_folder="")
 
@@ -42,9 +42,15 @@ def home():
         else:
             return "Informe valores válidos"
 
+@app.route('/js/<path:path>')
+def send_js(path):
+    return send_from_directory('js', path)
+
 @app.errorhandler(404)
 def not_found(erro):
     return "Insira valores válidos"
+
+
 
 app.run(debug=True) 
 # mudar a porta: passar o parametro port=0000
